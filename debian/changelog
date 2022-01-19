@@ -1,3 +1,17 @@
+base-files (12.2) unstable; urgency=medium
+
+  * A simplified version of the patch for DPKG_ROOT was applied, but the
+    simplification went too far and was incorrect. Closes: #824594.
+  * Use $() instead of `` when calling md5sum.
+
+ -- Santiago Vila <sanvila@debian.org>  Wed, 19 Jan 2022 23:35:00 +0100
+
+base-files (12.1) unstable; urgency=medium
+
+  * Add support for DPKG_ROOT to postinst. Closes: #824594
+
+ -- Santiago Vila <sanvila@debian.org>  Wed, 19 Jan 2022 22:40:00 +0100
+
 base-files (12) unstable; urgency=medium
 
   * Do not create /var/run/utmp in postinst, as /var/run is
