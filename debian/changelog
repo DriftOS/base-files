@@ -1,3 +1,12 @@
+base-files (13.1) unstable; urgency=medium
+
+  * Rename postinst.in to postinst. Use dh_installdeb token feature instead.
+  * Add /usr/local/libexec. Closes: #994220.
+  * Machine-readable copyright file. Closes: #1020828.
+  * Add a debian/gbp.conf file.
+
+ -- Santiago Vila <sanvila@debian.org>  Wed, 17 Apr 2024 12:45:00 +0200
+
 base-files (13) unstable; urgency=medium
 
   * Change issue, issue.net, debian_version and os-release
