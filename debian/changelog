@@ -1,3 +1,15 @@
+base-files (13.2) unstable; urgency=medium
+
+  * Document that /etc/profile is not a conffile anymore. Closes: #868095.
+  * Use a regexp to source files in /etc/profile.d. The behaviour should now be
+    well defined and consistent. Closes: #885414, #1069279.
+  * Add NEWS.Debian entry for the above.
+  * Document that the default umask is defined in /etc/login.defs. Closes: #983606.
+  * Add #DEBHELPER# token to postinst to make lintian happy.
+  * Make binary package to be git-reproducible.
+
+ -- Santiago Vila <sanvila@debian.org>  Fri, 03 May 2024 18:15:00 +0200
+
 base-files (13.1) unstable; urgency=medium
 
   * Rename postinst.in to postinst. Use dh_installdeb token feature instead.

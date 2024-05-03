@@ -14,6 +14,9 @@ DESTDIR = debian/base-files
 %:
 	dh $@
 
+execute_after_dh_clean:
+	sh debian/timestamps
+
 override_dh_auto_build:
 	sh debian/check-md5sum-etc profile
 

@@ -107,3 +107,5 @@ if [ "$1" = "configure" ] && [ "$2" != "" ]; then
     install_directory mnt 755 root
   fi
 fi
+
+#DEBHELPER#
