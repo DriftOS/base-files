@@ -1,3 +1,10 @@
+base-files (13.3) unstable; urgency=medium
+
+  [ Helmut Grohne ]
+  * DEP17: Install /usr-merge aliasing symlinks. Closes: #1064459.
+
+ -- Santiago Vila <sanvila@debian.org>  Thu, 06 Jun 2024 00:35:00 +0200
+
 base-files (13.2) unstable; urgency=medium
 
   * Document that /etc/profile is not a conffile anymore. Closes: #868095.
