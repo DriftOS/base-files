@@ -15,6 +15,7 @@ tmp
 usr
 usr/games
 usr/include
+usr/lib/systemd/system
 usr/share
 usr/share/base-files
 usr/share/common-licenses
