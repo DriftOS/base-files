@@ -1,3 +1,35 @@
+base-files (13.3ubuntu1) oracular; urgency=medium
+
+  * Merge with Debian unstable. Remaining changes:
+    - Add /etc/lsb-release file.
+    - /etc/issue{,.net}, /etc/{lsb,os}-release: Welcome to ATTRIBUTE ANIMAL!
+    - Install locale-check command to /usr/bin and invoke it from
+      /etc/profile.d/01-locale-fix.sh to ensure locale related environment
+      variables are set to valid values.
+    - Include systemd service to check the motd.ubuntu.com service
+    - Various bashrc extensions.
+    - Do not install /usr/local dirs with staff group writeability.
+    - Add default /etc/networks file.
+    - Remove the upgrade-available flag on package upgrade.
+    - Restore order line in /etc/host.conf with a comment.
+    - Build a motd-news-config package.
+    - Add update-motd scripts.
+    - etc/legal: legal notice for Ubuntu
+    - Depend on libcrypt1 (>= 1:4.4.10-10ubuntu3).
+    - set a LOGO=ubuntu-logo key which is part of the specification,
+      install ubuntu-logo/-text/-text-dark icons
+    Dropped, superseded by Debian changes:
+    - install aliasing symlinks for merged-/usr DEP17
+    - Include debhelper token in postinst.
+    Dropped, obsolete:
+    - Drop lsb-release-udeb package.
+
+  [ Julian Andreas Klode ]
+  * Rename protective diversions to include a leading dot as Debian does.
+    (LP: #2070061)
+
+ -- Simon Chopin <schopin@ubuntu.com>  Mon, 17 Jun 2024 19:35:31 +0200
+
 base-files (13.3) unstable; urgency=medium
 
   [ Helmut Grohne ]
