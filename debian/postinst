@@ -13,10 +13,6 @@ install_local_dir() {
   if [ ! -d "$DPKG_ROOT$1" ]; then
     mkdir -p "$DPKG_ROOT$1"
   fi
-  if [ -f "$DPKG_ROOT/etc/staff-group-for-usr-local" ]; then
-    chown root:staff "$DPKG_ROOT$1" 2>/dev/null || true
-    chmod 2775 "$DPKG_ROOT$1" 2> /dev/null || true
-  fi
 }
 
 install_from_default() {
