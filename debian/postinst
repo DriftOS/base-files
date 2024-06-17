@@ -98,6 +98,14 @@ if [ -d "$DPKG_ROOT/usr/share/info" ] && [ ! -f "$DPKG_ROOT/usr/info/dir" ] && [
 fi
 
 if [ "$1" = "configure" ] && [ "$2" != "" ]; then
+  # If we're upgrading base-files, remove the upgrade-available flag
+  # maintained by update-manager, and rerun the release-upgrade check
+  # immediately (in the background) to update the flag.
+  rm -f $DPKG_ROOT/var/lib/update-notifier/release-upgrade-available
+  if [ -x $DPKG_ROOT/usr/lib/update-manager/check-new-release ]; then
+    $DPKG_ROOT/usr/lib/update-manager/check-new-release -q > $DPKG_ROOT/var/lib/update-notifier/release-upgrade-available  &
+  fi
+
   update_to_current_default profile       /etc/profile
   update_to_current_default dot.profile   /root/.profile
   if dpkg --compare-versions "$2" lt-nl "7.7"; then
