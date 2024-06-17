@@ -27,7 +27,10 @@ USR_MERGE_MULTILIB = $(filter-out $(USR_MERGE),lib32 lib64 libo32 libx32)
 execute_after_dh_clean:
 	sh debian/timestamps
 
-override_dh_auto_build:
+locale-check:
+	$(CC) $(CFLAGS) $(LDFLAGS) -o locale-check locale-check.c
+
+override_dh_auto_build: locale-check
 	sh debian/check-md5sum-etc profile
 	set -e; { \
 	  echo "# Triggers for creating multilib aliasing symlinks on demand"; \
@@ -45,6 +48,8 @@ override_dh_auto_install:
 	install -p -m 644 licenses/* $(DESTDIR)/usr/share/common-licenses
 	install -p -m 644 origins/*  $(DESTDIR)/etc/dpkg/origins
 	install -p -m 644 share/*    $(DESTDIR)/usr/share/base-files
+	install -p -m 644 profile.d/* $(DESTDIR)/etc/profile.d
+	install -p -m 755 locale-check $(DESTDIR)/usr/bin
 ifeq ($(DEB_HOST_GNU_SYSTEM),gnu)
 	rmdir $(DESTDIR)/sys
 endif
