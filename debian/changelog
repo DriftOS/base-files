@@ -1,3 +1,9 @@
+base-files (13.3ubuntu2) oracular; urgency=medium
+
+  * Temporarily revert the Breaks on libc6 to avoid archive breakage
+
+ -- Simon Chopin <schopin@ubuntu.com>  Fri, 28 Jun 2024 09:52:47 +0200
+
 base-files (13.3ubuntu1) oracular; urgency=medium
 
   * Merge with Debian unstable. Remaining changes:
