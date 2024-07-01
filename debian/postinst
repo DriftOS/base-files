@@ -132,7 +132,11 @@ fi
 rtlddir="#USR_MERGE_RTLDLIB#"
 if [ "$1" = "configure" ] && [ -n "$rtlddir" ]; then
   # Remove temporary DEP17 M4 diversion added by glibc.
-  dpkg-divert --quiet --package base-files --remove --no-rename --divert "/.$rtlddir.usr-is-merged" "/$rtlddir"
+  if [ "$(dpkg-divert --truename "/$rtlddir")" = "/$rtlddir.usr-is-merged" ]; then
+    dpkg-divert --quiet --package base-files --remove --no-rename --divert "/$rtlddir.usr-is-merged" "/$rtlddir"
+  else
+    dpkg-divert --quiet --package base-files --remove --no-rename --divert "/.$rtlddir.usr-is-merged" "/$rtlddir"
+  fi
 fi
 
 if [ "$1" = "configure" ] || [ "$1" = "triggered" ]; then
