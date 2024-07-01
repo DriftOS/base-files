@@ -1,3 +1,9 @@
+base-files (13.3ubuntu3) oracular; urgency=medium
+
+  * Handle both old style and new-style rtlddir diversions
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Mon, 01 Jul 2024 11:10:40 +0200
+
 base-files (13.3ubuntu2) oracular; urgency=medium
 
   * Temporarily revert the Breaks on libc6 to avoid archive breakage
