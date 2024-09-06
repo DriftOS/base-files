@@ -1,3 +1,9 @@
+base-files (13.3ubuntu5) oracular; urgency=medium
+
+  * Replace the logos with a new revision from design to fix layout issues
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 06 Sep 2024 16:39:08 +0200
+
 base-files (13.3ubuntu4) oracular; urgency=medium
 
   * Update the Ubuntu logo assets for Oracular
