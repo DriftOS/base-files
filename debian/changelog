@@ -1,3 +1,10 @@
+base-files (13.3ubuntu6) oracular; urgency=medium
+
+  * /etc/issue{,.net}, /etc/{lsb,os}-release: Prepare for 24.10 release
+    LP: #2083825
+
+ -- Florent 'Skia' Jacquet <florent.jacquet@canonical.com>  Mon, 07 Oct 2024 09:35:07 +0100
+
 base-files (13.3ubuntu5) oracular; urgency=medium
 
   * Replace the logos with a new revision from design to fix layout issues
